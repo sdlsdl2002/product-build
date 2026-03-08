@@ -1,72 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lottery Number Generator</title>
+    <title id="site-title">천운의 황금 로또 - 사주 기반 대박 번호 생성기</title>
+    <meta name="description" content="하늘의 운과 땅의 기운을 담은 사주 기반 로또 번호 생성기입니다. 당신의 성명과 생년월일을 분석하여 일생의 대박 번호를 추천해 드립니다.">
     <meta name="google-adsense-account" content="ca-pub-6090997371163234">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6090997371163234"
-     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+     crossorigin="anonymous" onerror="console.log('AdSense script blocked');"></script>
+    <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
-    <div class="container">
-        <div id="weather-widget" class="weather-widget">
-            <span id="weather-info">Loading weather...</span>
-        </div>
-        <div class="header">
-            <h1>Lottery Number Generator</h1>
-            <button id="theme-toggle">🌙</button>
-        </div>
-        <div id="results-container">
-            <!-- 5 lines will be generated here -->
-        </div>
-        <button id="generate-btn">Generate 5 Sets</button>
+    <header class="navbar">
+        <nav class="nav-container">
+            <a href="/" class="logo" id="nav-logo">🪙 황금로또</a>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLanguage('ko')">KO</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+            <button id="theme-toggle" style="display:none;">🌙</button>
+        </nav>
+    </header>
 
-        <div class="affiliate-section">
-            <hr>
-            <h3>제휴 문의</h3>
+    <main class="container">
+        <div id="weather-widget" class="weather-widget">
+            <span id="weather-info">천기를 살피는 중...</span>
+        </div>
+
+        <!-- Saju Generator Section -->
+        <section id="generator" class="section saju-box">
+            <h1 id="saju-title" class="jackpot-text">💰 명리학 행운의 번호 추출</h1>
+            <p id="saju-desc">성함과 태어난 날의 기운을 합하여 '천명의 번호' 1세트를 추출합니다.</p>
+            
+            <div class="saju-form">
+                <input type="text" id="user-name" placeholder="성함 입력" class="input-field">
+                <input type="date" id="user-birth" class="input-field">
+                <button id="saju-btn" class="saju-btn">번호 분석하기</button>
+            </div>
+            
+            <div id="saju-result-area" class="saju-result-area">
+                <!-- Saju numbers & interpretation will appear here -->
+            </div>
+        </section>
+
+        <!-- Random Generator Section -->
+        <section class="section">
+            <h2 id="random-title">🎲 만물의 기운 랜덤 번호 (5세트)</h2>
+            <div id="results-container" class="results-grid">
+                <!-- 5 rows of numbers -->
+            </div>
+            <button id="generate-btn" class="primary-btn">새로운 기운으로 생성</button>
+        </section>
+
+        <!-- Valuable Content Section 1 -->
+        <section class="section content-rich">
+            <h2 id="tips-title" class="jackpot-text">🔮 부를 부르는 로또 당첨 비법</h2>
+            <div class="column-grid">
+                <div class="column-item">
+                    <h3 id="col1-title">음양의 조화 (홀짝)</h3>
+                    <p id="col1-desc">우주의 섭리는 음과 양의 조화에 있습니다. 홀수와 짝수가 3:3 혹은 2:4의 비율을 이룰 때 재물운이 가장 강하게 작용합니다.</p>
+                </div>
+                <div class="column-item">
+                    <h3 id="col2-title">오행의 분산</h3>
+                    <p id="col2-desc">숫자가 한곳에 치우치지 않고 골고루 퍼져 있어야 막힌 기운이 뚫리고 당첨의 문이 열립니다. 연속된 번호는 가급적 피하십시오.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valuable Content Section 2 (New for AdSense) -->
+        <section class="section">
+            <h2 id="article-title">📘 로또와 명리학: 숫자의 신비</h2>
+            <div class="column-grid">
+                <div class="column-item">
+                    <h3 id="col3-title">숫자 속에 담긴 오행</h3>
+                    <p id="col3-desc">동양 철학에서 각 숫자는 고유의 오행(목, 화, 토, 금, 수)을 가집니다. 자신의 사주에서 부족한 기운을 숫자로 보강하면 운의 흐름이 바뀝니다.</p>
+                </div>
+                <div class="column-item">
+                    <h3 id="col4-title">확률과 운명의 만남</h3>
+                    <p id="col4-desc">로또는 수학적 확률이지만, 그 기회를 잡는 것은 운명입니다. 긍정적인 마음가짐으로 도전하는 것이 가장 큰 당첨 비결입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section affiliate-section">
+            <h3 id="contact-title">🤝 제휴 및 문의</h3>
             <form action="https://formspree.io/f/xdawkpqw" method="POST" id="affiliate-form">
                 <div class="form-group">
-                    <label for="name">성함/업체명</label>
-                    <input type="text" id="name" name="name" required placeholder="예: 홍길동 / (주)컴퍼니">
+                    <label for="name" id="form-label-name">성함 또는 상호명</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">이메일 주소</label>
-                    <input type="email" id="email" name="_replyto" required placeholder="example@email.com">
+                    <label for="email" id="form-label-email">이메일</label>
+                    <input type="email" id="email" name="_replyto" required>
                 </div>
                 <div class="form-group">
-                    <label for="website">웹사이트 (선택)</label>
-                    <input type="url" id="website" name="website" placeholder="https://example.com">
+                    <label for="message" id="form-label-msg">내용</label>
+                    <textarea id="message" name="message" required></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="message">문의 내용</label>
-                    <textarea id="message" name="message" required placeholder="제휴하고 싶은 내용을 적어주세요."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">문의하기</button>
+                <button type="submit" class="submit-btn" style="background: var(--gold-gradient); color:#000; font-weight:bold;" id="form-submit">메시지 보내기</button>
             </form>
-        </div>
+        </section>
 
         <div id="disqus_thread" class="comments-section"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://workspace-7.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p id="footer-text" class="jackpot-text">&copy; 2026 천운의 황금 로또. 당신의 대박을 기원합니다.</p>
+            <div class="footer-links">
+                <a href="#" id="privacy-link">개인정보처리방침</a>
+                <a href="#" id="terms-link">이용약관</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="legal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
     </div>
-    <script src="main.js"></script>
+
+    <script src="main.js?v=4.0"></script>
 </body>
 </html>
