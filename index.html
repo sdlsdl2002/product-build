@@ -19,6 +19,50 @@
             <!-- 5 lines will be generated here -->
         </div>
         <button id="generate-btn">Generate 5 Sets</button>
+
+        <div class="affiliate-section">
+            <hr>
+            <h3>제휴 문의</h3>
+            <form action="https://formspree.io/f/xdawkpqw" method="POST" id="affiliate-form">
+                <div class="form-group">
+                    <label for="name">성함/업체명</label>
+                    <input type="text" id="name" name="name" required placeholder="예: 홍길동 / (주)컴퍼니">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="website">웹사이트 (선택)</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" name="message" required placeholder="제휴하고 싶은 내용을 적어주세요."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">문의하기</button>
+            </form>
+        </div>
+
+        <div id="disqus_thread" class="comments-section"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://lotto-gen-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
     <script src="main.js"></script>
 </body>
