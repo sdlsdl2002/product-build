@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://son-workspace2-54228309-95338.web.app/sitemap.xml
