@@ -241,6 +241,8 @@ footer {
     .numbers-line { flex-direction: column; gap: 10px; border-radius: 20px; }
     .number-set { gap: 5px; }
     .number { width: 35px; height: 35px; font-size: 0.9rem; }
-    .logo { font-size: 1.4rem; }
-    .menu-links { display: none; } /* Hide on small screens or adjust */
+    .logo { font-size: 1.2rem; }
+    .nav-container { padding: 0 10px; gap: 5px; }
+    .menu-links { display: flex; gap: 5px; }
+    .nav-link { margin: 0 5px; font-size: 0.85rem; white-space: nowrap; }
 }
