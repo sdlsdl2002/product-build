@@ -44,6 +44,18 @@ body {
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
 .lang-switcher {
     display: flex;
     gap: 10px;
@@ -224,28 +236,11 @@ footer {
     margin-top: 60px;
 }
 
-.footer-links {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.footer-links a {
-    color: #888;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: var(--primary-color);
-}
-
 @media (max-width: 768px) {
     .column-grid { grid-template-columns: 1fr; }
     .numbers-line { flex-direction: column; gap: 10px; border-radius: 20px; }
     .number-set { gap: 5px; }
     .number { width: 35px; height: 35px; font-size: 0.9rem; }
     .logo { font-size: 1.4rem; }
+    .menu-links { display: none; } /* Hide on small screens or adjust */
 }

@@ -88,25 +88,13 @@ function updateUI() {
     document.getElementById('col1-desc').textContent = t.col1Desc;
     document.getElementById('col2-title').textContent = t.col2Title;
     document.getElementById('col2-desc').textContent = t.col2Desc;
-    document.getElementById('article-title').textContent = t.articleTitle;
-    document.getElementById('col3-title').textContent = t.col3Title;
-    document.getElementById('col3-desc').textContent = t.col3Desc;
-    document.getElementById('col4-title').textContent = t.col4Title;
-    document.getElementById('col4-desc').textContent = t.col4Desc;
-    document.getElementById('contact-title').textContent = t.contactTitle;
-    document.getElementById('form-label-name').textContent = t.formName;
-    document.getElementById('form-label-email').textContent = t.formEmail;
-    document.getElementById('form-label-msg').textContent = t.formMsg;
-    document.getElementById('form-submit').textContent = t.formSubmit;
     document.getElementById('footer-text').textContent = t.footerText;
     
-    // Refresh random numbers to update labels
     if (document.getElementById('results-container').children.length > 0) {
         generateRandomSets();
     }
 }
 
-// Core Logic
 const generateBtn = document.getElementById('generate-btn');
 const resultsContainer = document.getElementById('results-container');
 const weatherInfo = document.getElementById('weather-info');
@@ -151,7 +139,6 @@ function generateRandomSets() {
 
 generateBtn.addEventListener('click', generateRandomSets);
 
-// Saju Logic
 const sajuBtn = document.getElementById('saju-btn');
 const sajuResultArea = document.getElementById('saju-result-area');
 const userNameInput = document.getElementById('user-name');
@@ -218,7 +205,6 @@ sajuBtn.addEventListener('click', () => {
     }, 1200);
 });
 
-// Weather (Simple)
 function fetchWeather() {
     navigator.geolocation.getCurrentPosition((pos) => {
         const { latitude, longitude } = pos.coords;
@@ -231,7 +217,6 @@ function fetchWeather() {
     });
 }
 
-// Init
 window.setLanguage = setLanguage;
 generateRandomSets();
 fetchWeather();

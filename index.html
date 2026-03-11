@@ -30,6 +30,9 @@
     <header class="navbar">
         <nav class="nav-container">
             <a href="/" class="logo" id="nav-logo">🪙 황금로또</a>
+            <div class="menu-links">
+                <a href="/animal.html" class="nav-link">🐾 동물상 테스트</a>
+            </div>
             <div class="lang-switcher">
                 <button class="lang-btn active" onclick="setLanguage('ko')">KO</button>
                 <button class="lang-btn" onclick="setLanguage('en')">EN</button>
@@ -83,78 +86,26 @@
             </div>
         </section>
 
-        <!-- Valuable Content Section 2 (New for AdSense) -->
-        <section class="section">
-            <h2 id="article-title">📘 로또와 명리학: 숫자의 신비</h2>
-            <div class="column-grid">
-                <div class="column-item">
-                    <h3 id="col3-title">숫자 속에 담긴 오행</h3>
-                    <p id="col3-desc">동양 철학에서 각 숫자는 고유의 오행(목, 화, 토, 금, 수)을 가집니다. 자신의 사주에서 부족한 기운을 숫자로 보강하면 운의 흐름이 바뀝니다.</p>
-                </div>
-                <div class="column-item">
-                    <h3 id="col4-title">확률과 운명의 만남</h3>
-                    <p id="col4-desc">로또는 수학적 확률이지만, 그 기회를 잡는 것은 운명입니다. 긍정적인 마음가짐으로 도전하는 것이 가장 큰 당첨 비결입니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section affiliate-section">
-            <h3 id="contact-title">🤝 제휴 및 문의</h3>
-            <form action="https://formspree.io/f/xdawkpqw" method="POST" id="affiliate-form">
-                <div class="form-group">
-                    <label for="name" id="form-label-name">성함 또는 상호명</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" id="form-label-email">이메일</label>
-                    <input type="email" id="email" name="_replyto" required>
-                </div>
-                <div class="form-group">
-                    <label for="message" id="form-label-msg">내용</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn" style="background: var(--gold-gradient); color:#000; font-weight:bold;" id="form-submit">메시지 보내기</button>
-            </form>
-        </section>
-
         <div id="disqus_thread" class="comments-section"></div>
         <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            
             var disqus_config = function () {
-                this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = window.location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url = window.location.href;
+                this.page.identifier = window.location.pathname;
             };
-            
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://workspace-7.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://workspace-7.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </main>
 
     <footer>
         <div class="footer-content">
             <p id="footer-text" class="jackpot-text">&copy; 2026 천운의 황금 로또. 당신의 대박을 기원합니다.</p>
-            <div class="footer-links">
-                <a href="#" id="privacy-link">개인정보처리방침</a>
-                <a href="#" id="terms-link">이용약관</a>
-            </div>
         </div>
     </footer>
-
-    <div id="legal-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
 
     <script src="main.js?v=4.0"></script>
 </body>
